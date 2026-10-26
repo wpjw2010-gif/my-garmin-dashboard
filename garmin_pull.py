@@ -72,6 +72,9 @@ sleep_coach = None
 
 # Extract key metrics safely
 resting_hr = stats.get("restingHeartRate")
+active_calories = stats.get("activeKilocalories")
+step_count = stats.get("totalSteps")
+
 sleep_seconds = sleep_data.get("dailySleepDTO", {}).get("sleepTimeSeconds")
 sleep_score = sleep_data.get("dailySleepDTO", {}).get("sleepScores", {}).get("overall", {}).get("value")
 
@@ -88,6 +91,8 @@ record = {
     "hrv_avg": hrv_avg,
     "sleep_seconds": sleep_seconds,
     "sleep_score": sleep_score,
+    "active_calories": active_calories,
+    "step_count": step_count,
     "training_readiness": training_readiness,
     "endurance_score": endurance_score,
     "sleep_coach": sleep_coach,
